@@ -11,29 +11,27 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A flutter package with animated customizable card items selection.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+You can customize the card group with options such as difference colors, animation times, and enrich your widget with photo and detail information lists.
 
-## Getting started
+## Instalation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+dependencies:
+  card_selector: ^0.0.1
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
+## Simple Useage
 ```dart
-const like = 'sample';
+ SelectCardGroup(
+                context,
+                imageSourceType: ImageSourceType.network,
+                images: imagesFromNetwork,
+                titles: titles,
+                contents: contents,
+                onTap: (String selectedItemTitle) {
+                  debugPrint(selectedItemTitle);
+                },
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
