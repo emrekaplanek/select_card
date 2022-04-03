@@ -20,7 +20,7 @@ You can customize the card group with options such as difference colors, animati
 ## Instalation
 
 dependencies:
-  card_selector: ^0.0.1
+  select_card: ^0.0.1
 
 ## Simple Useage
 ```dart
