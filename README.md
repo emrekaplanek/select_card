@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-A flutter package with animated customizable card items selection.
+A Flutter package with animated customizable card items selection.
 
 ## Features
 
@@ -24,7 +24,7 @@ dependencies:
 
 ## Simple Useage
 ```dart
- SelectCardGroup(
+ SelectCard(
                 context,
                 imageSourceType: ImageSourceType.network,
                 images: imagesFromNetwork,
