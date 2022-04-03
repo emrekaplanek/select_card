@@ -1,4 +1,4 @@
-library select_card;
+library select_card_group;
 
 import 'package:flutter/material.dart';
 
