@@ -1,10 +1,10 @@
-library select_card_group;
+library select_card;
 
 import 'package:flutter/material.dart';
 
 enum ImageSourceType { asset, network }
 
-class SelectCardGroup extends StatefulWidget {
+class SelectCard extends StatefulWidget {
   BuildContext context;
   ImageSourceType? imageSourceType;
   Function onTap;
@@ -17,7 +17,7 @@ class SelectCardGroup extends StatefulWidget {
   List<String> titles = [];
   List<String?>? contents = [];
   List<String?>? images = [];
-  SelectCardGroup(this.context,
+  SelectCard(this.context,
       {required this.titles,
       required this.onTap,
       this.contents,
@@ -33,11 +33,10 @@ class SelectCardGroup extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<SelectCardGroup> createState() => _SelectCardGroupState();
+  State<SelectCard> createState() => _SelectCardState();
 }
 
-class _SelectCardGroupState extends State<SelectCardGroup>
-    with TickerProviderStateMixin {
+class _SelectCardState extends State<SelectCard> with TickerProviderStateMixin {
   AnimationController? _controller;
   AnimationController? _sizeController;
   Animation? _colorAnimation;
