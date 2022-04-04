@@ -1,6 +1,6 @@
 name: select_card
 description: A Flutter package with animated customizable card items selection.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/emrekaplanek
 repository: https://github.com/emrekaplanek/select_card
 documentation: https://github.com/emrekaplanek/select_card
