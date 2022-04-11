@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../enums/enums.dart';
 
+// ignore: must_be_immutable
 class SelectSingleCard extends StatefulWidget {
   BuildContext context;
   ImageSourceType? imageSourceType;

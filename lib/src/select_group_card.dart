@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:select_card/enums/image_source_type_enum.dart';
 
+// ignore: must_be_immutable
 class SelectGroupCard extends StatefulWidget {
   BuildContext context;
-  ImageSourceType? imageSourceType;
+  ImageSourceType?
+      imageSourceType; //fotoğrafların assetlerden yada networkten mi belirler
   Function onTap;
-  double radius;
-  Color contentTextColor;
-  Color titleTextColor;
+  double radius; //kartların köşe radiusları
+  Color contentTextColor; // content rengi
+  Color titleTextColor; //title rengi
   Color cardBackgroundColor;
   Color cardSelectedColor;
-  Duration duration;
+  Duration duration; // animasyonların hareket süresi
   List<String> titles = [];
-  List<String?>? contents = [];
-  List<String?>? images = [];
+  List<String?>? contents = []; //opsiyonel content listesi
+  List<String?>? images = []; //opsiyonel image listesi
   SelectGroupCard(this.context,
       {required this.titles,
       required this.onTap,
@@ -88,7 +90,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 145,
+      height: 145, // height of widget
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -104,6 +106,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
                       if (isSelected) {
                         _controller!.reverse();
                         _sizeController!.reverse().then((value) {
+                          // Önce seçili olanı animate ettirip eski pozisyonuna getirir. ardından yeni seçileni animete ettirir.
                           selectedName = widget.titles[index];
                           _controller!.forward();
                           _sizeController!.forward();
@@ -118,20 +121,24 @@ class _SelectGroupCardState extends State<SelectGroupCard>
                     },
                     child: selectedName == widget.titles[index]
                         ? ScaleTransition(
+                            //boyutlandırma animasyonu
                             scale: _sizeController!,
                             child: Container(
                               width: 90,
                               decoration: BoxDecoration(
-                                  color: _colorAnimation!.value,
+                                  color: _colorAnimation!
+                                      .value, //renk değişimi için animasyon verisi
                                   borderRadius: BorderRadius.all(
                                       Radius.circular(widget.radius))),
                               child: Padding(
                                 padding: const EdgeInsets.all(2.0),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                      color: widget.cardBackgroundColor,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(widget.radius - 2))),
+                                    color: widget.cardBackgroundColor,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(widget.radius - 2),
+                                    ),
+                                  ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -178,6 +185,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   }
 
   Center buildSelectedContent(int index) {
+    // seçilmiş Content içeriği
     return Center(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(6, 0, 6, 2),
@@ -196,6 +204,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   }
 
   Center buildSelectedTitle(int index) {
+    // seçilmiş title içeriği
     return Center(
       child: Text(
         widget.titles[index],
@@ -211,6 +220,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   }
 
   Center buildTitle(int index) {
+    // title içeriği
     return Center(
         child: Text(
       widget.titles[index],
@@ -225,6 +235,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   }
 
   Center buildImage(int index) {
+    // varsa görsel içeriği
     return Center(
       child: widget.imageSourceType == ImageSourceType.network
           ? buildNetworkImage(index)
@@ -233,6 +244,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   }
 
   Image buildNetworkImage(int index) {
+    // görselin networkten görüntülenmesi sağlanır
     return Image.network(
       widget.images![index]!,
       height: 45,
@@ -241,6 +253,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
   }
 
   Image buildAssetImage(int index) {
+    // görselin assetlerden görüntülenmesi sağlanır
     return Image.asset(
       widget.images![index]!,
       height: 45,
