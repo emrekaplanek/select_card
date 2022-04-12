@@ -4,7 +4,6 @@
 
 A Flutter package with animated customizable card items selection.
 
-
 ## Features
 
 You can customize the card group with options such as difference colors, animation times, and enrich your widget with photo and detail information lists.
@@ -12,7 +11,10 @@ You can customize the card group with options such as difference colors, animati
 ## Widgets
 
 SelectGroupCard();  
+This widget represents a card group, it includes lists for its use. It has to get the list of headers by necessity, the lists of contents and images can be provided optionally. With this widget, you can move forward by choosing one among many groups. It will add animated visual beauty to your application.
+
 SelectSingleCard();
+This widget represents a card, it gets string parameters for its use. It has to take title. Content and image parameters can be optionally provided. With this widget you can choose a lot from cards. Single cards will add animated visual beauty to your application.
 
 ## Simple Usage
 
@@ -20,7 +22,13 @@ SelectSingleCard();
 SelectGroupCard(context,
                 titles: titles,
                 onTap: (String selectedTitle) {
-                  debugPrint(selectedTitle);
+                debugPrint(selectedTitle);
+                });
+
+SelectSingleCard(context,
+                title: "Title",
+                onTap: (String selectedTitle) {
+                debugPrint(selectedTitle);
                 });
 ```
 ## Usage with properties
