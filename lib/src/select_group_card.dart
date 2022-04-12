@@ -184,6 +184,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
     );
   }
 
+  /// Fonksiyon - seçilmiş içeriği görüntüler
   Center buildSelectedContent(int index) {
     // seçilmiş Content içeriği
     return Center(
@@ -203,6 +204,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
     );
   }
 
+  /// Fonksiyon - seçilmiş title görüntüler
   Center buildSelectedTitle(int index) {
     // seçilmiş title içeriği
     return Center(
@@ -219,6 +221,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
     );
   }
 
+  /// Fonksiyon - title görüntüler
   Center buildTitle(int index) {
     // title içeriği
     return Center(
@@ -234,6 +237,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
     ));
   }
 
+  /// Fonksiyon - image görüntüler
   Center buildImage(int index) {
     // varsa görsel içeriği
     return Center(
@@ -243,6 +247,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
     );
   }
 
+  /// Fonksiyon - network image görüntüler
   Image buildNetworkImage(int index) {
     // görselin networkten görüntülenmesi sağlanır
     return Image.network(
@@ -252,6 +257,7 @@ class _SelectGroupCardState extends State<SelectGroupCard>
     );
   }
 
+  /// Fonksiyon - asset image görüntüler
   Image buildAssetImage(int index) {
     // görselin assetlerden görüntülenmesi sağlanır
     return Image.asset(

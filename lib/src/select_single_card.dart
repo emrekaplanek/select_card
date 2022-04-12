@@ -38,8 +38,8 @@ class SelectSingleCard extends StatefulWidget {
 
 class _SelectSingleCardState extends State<SelectSingleCard>
     with TickerProviderStateMixin {
-  AnimationController? _controller;
-  AnimationController? _sizeController;
+  AnimationController? _controller; //renk animasyonuna ait kontoller
+  AnimationController? _sizeController; //boyut animasyonuna ait kontoller
   Animation? _colorAnimation;
 
   bool isSelected = false;
@@ -164,7 +164,9 @@ class _SelectSingleCardState extends State<SelectSingleCard>
     );
   }
 
+  /// Fonksiyon - seçilmiş içeriği görüntüler
   Center buildSelectedContent() {
+    // seçilmiş Content içeriği
     return Center(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(6, 0, 6, 2),
@@ -182,7 +184,9 @@ class _SelectSingleCardState extends State<SelectSingleCard>
     );
   }
 
+  /// Fonksiyon - seçilmiş title görüntüler
   Center buildSelectedTitle() {
+    // seçilmiş title içeriği
     return Center(
       child: Text(
         widget.title,
@@ -197,7 +201,9 @@ class _SelectSingleCardState extends State<SelectSingleCard>
     );
   }
 
+  /// Fonksiyon - title görüntüler
   Center buildTitle() {
+    // title içeriği
     return Center(
         child: Text(
       widget.title,
@@ -211,7 +217,9 @@ class _SelectSingleCardState extends State<SelectSingleCard>
     ));
   }
 
+  /// Fonksiyon - image görüntüler
   Center buildImage() {
+    // varsa görsel içeriği
     return Center(
       child: widget.imageSourceType == ImageSourceType.network
           ? buildNetworkImage()
@@ -219,7 +227,9 @@ class _SelectSingleCardState extends State<SelectSingleCard>
     );
   }
 
+  /// Fonksiyon - network image görüntüler
   Image buildNetworkImage() {
+    // görselin networkten görüntülenmesi sağlanır
     return Image.network(
       widget.image!,
       height: 45,
@@ -227,7 +237,9 @@ class _SelectSingleCardState extends State<SelectSingleCard>
     );
   }
 
+  /// Fonksiyon - asset image görüntüler
   Image buildAssetImage() {
+    // görselin assetlerden görüntülenmesi sağlanır
     return Image.asset(
       widget.image!,
       height: 45,
