@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:select_card/enums/image_source_type_enum.dart';
 
+///This widget represents a card group, it includes lists for its use. It has to
+/// get the list of headers by necessity, the lists of contents and images can
+/// be provided optionally. With this widget, you can move forward by choosing
+/// one among many groups. It will add animated visual beauty to your
+/// application.
 // ignore: must_be_immutable
 class SelectGroupCard extends StatefulWidget {
   BuildContext context;

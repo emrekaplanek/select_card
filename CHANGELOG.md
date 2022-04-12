@@ -1,3 +1,6 @@
+## 0.0.7 - 12 Nisan 2022
+
+*Documentation comments were added
 ## 0.0.6 - 12 Nisan 2022
 
 *Detailed documentation was added

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../enums/enums.dart';
 
+///This widget represents a card, it gets string parameters for its use. It has
+///to take title. Content and image parameters can be optionally provided. With
+/// this widget you can choose a lot from cards. Single cards will add animated
+///  visual beauty to your application.
 // ignore: must_be_immutable
 class SelectSingleCard extends StatefulWidget {
   BuildContext context;

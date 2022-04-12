@@ -10,7 +10,7 @@ You can customize the card group with options such as difference colors, animati
 
 ## Widgets
 
-SelectGroupCard();  
+SelectGroupCard();
 This widget represents a card group, it includes lists for its use. It has to get the list of headers by necessity, the lists of contents and images can be provided optionally. With this widget, you can move forward by choosing one among many groups. It will add animated visual beauty to your application.
 
 SelectSingleCard();
