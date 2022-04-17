@@ -2,11 +2,11 @@
 
 # select_card Flutter widget
 
-A Flutter package with animated customizable card items selection.
+A Flutter package with animated customizable items selection.
 
 ## Features
 
-You can customize the card group with options such as difference colors, animation times, and enrich your widget with photo and detail information lists.
+You can customize the card group, card and dropdown selection with options such as different colors, animation times, and enrich your widget with photo and detail information lists.
 
 <p float="left;padding=10px">
 <img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectGroupCard.gif" width="220">
