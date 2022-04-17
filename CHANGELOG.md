@@ -1,3 +1,6 @@
+## 0.0.9 - 17 Nisan 2022
+
+*Responsiveness fix
 ## 0.0.8 - 17 Nisan 2022
 
 *SelectSlideCard widget was added and new examples were shown

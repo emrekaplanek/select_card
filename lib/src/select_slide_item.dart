@@ -18,7 +18,7 @@ class SelectSlideItem extends StatefulWidget {
       this.hint = "Please select item",
       this.fontSize = 16,
       this.dropdownHeight = 50,
-      this.imageHeight = 180,
+      this.imageHeight = 300,
       this.fontColor = const Color(0xff003087),
       this.duration = const Duration(milliseconds: 800),
       Key? key})
@@ -83,12 +83,15 @@ class _SelectSlideItemState extends State<SelectSlideItem>
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(widget.text,
-                    style: TextStyle(
-                        fontSize: widget.fontSize, color: widget.fontColor)),
+                Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Text(widget.text,
+                        style: TextStyle(
+                            fontSize: widget.fontSize,
+                            color: widget.fontColor))),
                 if (widget.mapList != null)
                   DropdownButton<String>(
                     style: TextStyle(
@@ -127,6 +130,7 @@ class _SelectSlideItemState extends State<SelectSlideItem>
                   ),
               ]),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TweenAnimationBuilder(
                 tween: Tween<double>(begin: 0, end: 1),
@@ -134,42 +138,41 @@ class _SelectSlideItemState extends State<SelectSlideItem>
                 curve: Curves.ease,
                 duration: widget.duration,
                 builder: (BuildContext context, double value, _) {
-                  return SizedBox(
-                    height: selectedImg != null ? widget.imageHeight : 0,
-                    child: Stack(
-                      children: [
-                        ScaleTransition(
-                          scale: _animationBigger,
-                          child: Opacity(
-                            opacity: value,
-                            child: Transform.translate(
-                              offset: Offset(0.0, -100 * (1 - value)),
-                              child: (selectedImg != null)
-                                  ? Image.asset(selectedImg!,
-                                      width: MediaQuery.of(context).size.width -
-                                          30)
-                                  : null,
-                            ),
+                  return Stack(
+                    children: [
+                      ScaleTransition(
+                        scale: _animationBigger,
+                        child: Opacity(
+                          opacity: value,
+                          child: Transform.translate(
+                            offset: Offset(0, -200 * (1 - value)),
+                            child: (selectedImg != null)
+                                ? Image.asset(selectedImg!,
+                                    width: selectedImg != null
+                                        ? widget.imageHeight
+                                        : 0)
+                                : null,
                           ),
                         ),
-                        ScaleTransition(
-                          scale: _animationsmaller,
-                          child: Opacity(
-                            opacity: 1 - value,
-                            child: Transform.translate(
-                              offset: Offset(0.0, 100 * value),
-                              child: (previousImg != null)
-                                  ? Image.asset(
-                                      previousImg!,
-                                      width: MediaQuery.of(context).size.width -
-                                          30,
-                                    )
-                                  : null,
-                            ),
+                      ),
+                      ScaleTransition(
+                        scale: _animationsmaller,
+                        child: Opacity(
+                          opacity: 1 - value,
+                          child: Transform.translate(
+                            offset: Offset(0, 100 * value),
+                            child: (previousImg != null)
+                                ? Image.asset(
+                                    previousImg!,
+                                    width: selectedImg != null
+                                        ? widget.imageHeight
+                                        : 0,
+                                  )
+                                : null,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   );
                 },
               )
