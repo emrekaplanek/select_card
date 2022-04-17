@@ -9,9 +9,9 @@ A Flutter package with animated customizable card items selection.
 You can customize the card group with options such as difference colors, animation times, and enrich your widget with photo and detail information lists.
 
 <p float="left;padding=10px">
-<img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectGroupCard.gif" width="200">
-<img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectSingleCard.gif" width="200">
-<img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectSlideItem.gif" width="200">
+<img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectGroupCard.gif" width="220">
+<img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectSingleCard.gif" width="220">
+<img src = "https://raw.githubusercontent.com/emrekaplanek/mediaRepository/main/selectcard/SelectSlideItem.gif" width="230">
 </p>
 
 ## Widgets
