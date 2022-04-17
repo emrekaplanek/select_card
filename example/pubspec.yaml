@@ -26,5 +26,18 @@ flutter:
 
   uses-material-design: true
 
-assets:
-  - assets/clock.png
+  assets:
+    - assets/clock.png
+    - assets/cars/car1.png
+    - assets/cars/car2.png
+    - assets/cars/car3.png
+    - assets/cars/car4.png
+    - assets/cars/car5.png
+    - assets/cars/car6.png
+    - assets/cars/car7.png
+    - assets/cakes/cake1.png
+    - assets/cakes/cake2.png
+    - assets/cakes/cake3.png
+    - assets/cakes/cake4.png
+    - assets/cakes/cake5.png
+    - assets/cakes/cake6.png

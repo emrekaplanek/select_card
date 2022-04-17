@@ -19,11 +19,13 @@ class SelectGroupCard extends StatefulWidget {
   Color cardSelectedColor;
   Duration duration; // animasyonların hareket süresi
   List<String> titles = [];
+  List<String?>? ids = [];
   List<String?>? contents = []; //opsiyonel content listesi
   List<String?>? images = []; //opsiyonel image listesi
   SelectGroupCard(this.context,
       {required this.titles,
       required this.onTap,
+      this.ids,
       this.contents,
       this.imageSourceType,
       this.images,
@@ -122,7 +124,16 @@ class _SelectGroupCardState extends State<SelectGroupCard>
                         _controller!.forward();
                         _sizeController!.forward();
                       }
-                      widget.onTap(widget.titles[index]);
+                      try {
+                        if (widget.ids != null && widget.ids!.isNotEmpty) {
+                          widget.onTap(
+                              widget.titles[index], widget.ids![index]);
+                        } else {
+                          widget.onTap(widget.titles[index]);
+                        }
+                      } catch (e) {
+                        widget.onTap(widget.titles[index]);
+                      }
                     },
                     child: selectedName == widget.titles[index]
                         ? ScaleTransition(

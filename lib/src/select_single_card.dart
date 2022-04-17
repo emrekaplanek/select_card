@@ -19,11 +19,13 @@ class SelectSingleCard extends StatefulWidget {
   Duration duration;
   String? content;
   String title = "";
+  String? id;
   String? image;
 
   SelectSingleCard(this.context,
       {required this.title,
       required this.onTap,
+      this.id,
       this.content,
       this.imageSourceType,
       this.image,
@@ -111,7 +113,15 @@ class _SelectSingleCardState extends State<SelectSingleCard>
                   _controller!.forward();
                   _sizeController!.forward();
                 }
-                widget.onTap(widget.title);
+                try {
+                  if (widget.id != null) {
+                    widget.onTap(widget.title, widget.id);
+                  } else {
+                    widget.onTap(widget.title);
+                  }
+                } catch (e) {
+                  widget.onTap(widget.title);
+                }
               },
               child: selectedName == widget.title
                   ? ScaleTransition(

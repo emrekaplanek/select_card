@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "select_card_example_project",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "select_card_example_project (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "select_card_example_project (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "select_card",
+            "cwd": "path/select_card",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "select_card (profile mode)",
+            "cwd": "path/select_card",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "select_card (release mode)",
+            "cwd": "path/select_card",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

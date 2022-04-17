@@ -1,3 +1,6 @@
+## 0.0.8 - 17 Nisan 2022
+
+*SelectSlideCard widget was added and new examples were shown
 ## 0.0.7 - 12 Nisan 2022
 
 *Documentation comments were added
